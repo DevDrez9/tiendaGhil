@@ -1,0 +1,162 @@
+.productoPage{
+
+    
+    width: 60%;
+    margin:100px auto;
+   display: flex;
+   
+}
+.imagenes{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+     margin: 20px 0;
+}
+.imagenPrincipal{
+    width: 450px;
+    height: 450px;
+    
+
+}
+.imagenPrincipal img{
+    width: 100%;
+    height: 100%;
+}
+.imagenesSegundarias{
+    display: flex;
+    width: 100%;
+    margin: 20px 0;
+   
+
+}
+.imagenSelec{
+    border: 1px solid black;
+}
+.imagenSegundaria{
+    width: 80px;
+    height: 80px;
+ 
+    margin: 5px;
+     cursor: pointer;
+}
+.contenidoProducto{
+    margin: 20px ;
+    width: 100%;
+}
+.contenidoProducto h2{
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.contenidoProducto .precioProducto{
+    font-size: 25px;
+    margin: 10px 0;
+}
+.colores, .tallas{
+    display: flex;
+
+}
+.color, .talla{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}
+.talla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    
+}
+.comprar{
+    display: flex;
+    margin-top: 50px;
+
+}
+.cantidadCompra{
+    display: flex;
+}
+.controlesCantidad{
+    width: 40px;
+    height: 50px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin:0 5px ;
+     
+    
+    
+
+}
+.controlesCantidad .masCantidad,
+.controlesCantidad .menosCantidad{
+  width: 100%;
+    height: 45%;
+    border: 1px solid black;
+    cursor: pointer;
+     display: flex;
+     text-align: center;
+     align-items: center;
+     justify-content: center;
+     margin: 2px;
+     font-size: 15px;
+     
+     
+    
+}
+.controlesCantidad .masCantidad{
+   
+    
+    border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     
+}
+.controlesCantidad .menosCantidad{
+   
+    border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+    
+}
+.cantidadSelect{
+    display: flex;
+    margin:0 5px ;
+    
+}
+/* Para navegadores WebKit (Chrome, Safari, Edge) */
+.cantidadSelect input::-webkit-outer-spin-button,
+.cantidadSelect input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.cantidadSelect input{
+    width: 40px;
+    border: 1px solid black;
+    text-align: center;
+     -moz-appearance: textfield;
+     border-radius: 5px;
+    
+}
+.botonComprar{
+    width: 150px;
+    height: 50px;
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.hacerPedido{
+    margin: 10px 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
