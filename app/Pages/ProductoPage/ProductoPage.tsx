@@ -109,6 +109,8 @@ const ProductoPage: React.FC = () => {
         tiendaId: TIENDA_ID_ACTUAL,
         clienteId: clienteId, 
         items: [newCarritoItem],
+        
+
         // Los campos opcionales como 'cliente', 'telefono', etc., se omiten aquí
         // a menos que los necesites enviar en la primera adición.
     };
