@@ -8,13 +8,8 @@ import type { Categoria } from "~/Models/tiendaResponse.model";
 import { useProductosPorFiltro } from "~/hooks/useProductos";
 
 
-interface FiltroPageeProps {
-    categorias:Categoria[];
-    
 
-}
-
-const FiltroPage: React.FC<FiltroPageeProps> = ({categorias}) => {
+const FiltroPage: React.FC = ({}) => {
     const { categoria, subCategoria } = useParams();
    
 

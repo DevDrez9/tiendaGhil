@@ -1,0 +1,30 @@
+.cuerpo{
+    width: 100%;
+    min-height: 90vh;
+    margin-top: 80px;
+    align-items: center;
+    
+}
+
+.form{
+    
+    padding: 20px; border: 1px solid #ccc;
+     border-radius: 5px;
+     max-width: 350px; margin:50px auto
+
+
+}
+h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+label{
+    font-size: 18px;
+    font-weight: 700;
+}
+.registro{
+    color:blue;
+    cursor: pointer;
+}

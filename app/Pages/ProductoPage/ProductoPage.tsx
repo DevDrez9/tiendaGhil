@@ -79,6 +79,74 @@ const ProductoPage: React.FC = () => {
       setCantidad(value);
     }
   }, []);
+  const API_BASE_URL = 'http://localhost:3000/carritos'; 
+  const TIENDA_ID_ACTUAL = 1; // Reemplaza con el ID de tu tienda
+
+  const handleAddCarrito = async () => {
+    // 1. Obtener el clienteId desde localStorage
+    const clienteIdString = localStorage.getItem('usuarioIdWeb');
+    const clienteId = clienteIdString ? parseInt(clienteIdString) : undefined;
+    
+    // Si el clienteId no existe, no puede crear/actualizar el carrito
+    if (!clienteId) {
+        alert("Debes iniciar sesión para añadir productos al carrito.");
+        return;
+    }
+
+    // Validar datos mínimos
+    if (!producto || !producto.id || cantidad < 1) {
+        alert("Error: Producto ID o Cantidad inválidos.");
+        return;
+    }
+
+    // 2. Construir el DTO (Data Transfer Object)
+    const newCarritoItem = {
+        productoId: producto.id,
+        cantidad: cantidad,
+    };
+
+    const createCarritoDto = {
+        tiendaId: TIENDA_ID_ACTUAL,
+        clienteId: clienteId, 
+        items: [newCarritoItem],
+        // Los campos opcionales como 'cliente', 'telefono', etc., se omiten aquí
+        // a menos que los necesites enviar en la primera adición.
+    };
+
+    console.log("Enviando al carrito:", createCarritoDto);
+
+    try {
+        // 3. Enviar la solicitud POST a la API
+        const response = await fetch(API_BASE_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // Si usas autenticación JWT, aquí incluirías el token
+                // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+            body: JSON.stringify(createCarritoDto),
+        });
+
+        // 4. Manejar la respuesta
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Error al añadir el producto al carrito.');
+        }
+
+        const carritoResponse = await response.json();
+        
+        // El carritoResponse tendrá el carrito completo (existente o recién creado)
+        console.log("Producto añadido. Carrito actual:", carritoResponse);
+        alert(`Producto ${producto.nombre} añadido (Cantidad: ${cantidad}).`);
+
+        // Opcional: Actualizar el estado global del carrito si estás usando Context
+        // updateGlobalCart(carritoResponse); 
+
+    } catch (error) {
+        console.error("Fallo la operación del carrito:", error);
+        alert(`Fallo al añadir producto: ${error.message}`);
+    }
+};
   
   // -----------------------------------------------------------
   // Lógica de Selección de Imagen (Se mantiene igual)
@@ -175,10 +243,11 @@ const ProductoPage: React.FC = () => {
                 className="botonComprar"
                 type="button"
                 value="Agregar Carrito"
+                onClick={handleAddCarrito}
               />
             </div>
           </div>
-          <div className="hacerPedido">Realizar Pedido</div>
+          {/*<div className="hacerPedido">Realizar Pedido</div>*/}
         </div>
       </div>
     </>

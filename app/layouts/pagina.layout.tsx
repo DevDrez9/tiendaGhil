@@ -53,10 +53,25 @@ const PaginaLayout = () => {
   // Configuración por defecto (puede estar en un archivo aparte)
   //ConfigWeb
   
+  // Obtener el ID del almacenamiento
 
   
- 
-  ///
+// 1. Estado inicial, lee de localStorage
+
+  
+ const storedId = localStorage.getItem('usuarioIdWeb');
+
+// Si storedId existe (es decir, no es null), usa storedId.
+// Si storedId es null, usa 0.
+const usuarioId = storedId ? storedId : 0; 
+
+if (usuarioId) {
+  console.log('Usuario loggeado con ID:', usuarioId);
+} else {
+  console.log('Usuario no loggeado');
+}
+
+
 
   return (
     <>
@@ -64,10 +79,12 @@ const PaginaLayout = () => {
         <Nav
           categorias={categorias}
           configWeb={configWeb}
-         
+          usuarioIdWeb={1+""}
+          
+          
         />
-        <Outlet context={{ banners, handleCard }} />
-        <Footer configWeb={configWeb}></Footer>
+        <Outlet context={{ banners, handleCard, }} />
+        <Footer categorias={categorias} configWeb={configWeb}></Footer>
       </div>
     </>
   );
