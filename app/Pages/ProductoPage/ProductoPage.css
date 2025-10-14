@@ -160,3 +160,71 @@
     cursor: pointer;
     font-weight: 700;
 }
+
+/* Contenedor principal del selector */
+.talla-selector-container {
+    font-family: Arial, sans-serif;
+    
+    max-width: 400px;
+   
+}
+
+.selector-label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Contenedor de la cuadrícula de tallas */
+.tallas-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tallas salten de línea */
+    gap: 10px; /* Espacio entre los recuadros */
+    margin-bottom: 20px;
+}
+
+/* Estilos base de los recuadros de talla */
+.talla-recuadro {
+    width: 50px; /* Ancho fijo para el recuadro */
+    height: 50px; /* Alto fijo para hacerlo cuadrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #555;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+/* Estado al pasar el mouse (hover) */
+.talla-recuadro:not(.seleccionada):hover {
+    border-color: #999;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estado de la talla seleccionada */
+.talla-recuadro.seleccionada {
+    border-color: black; /* Azul vibrante */
+    background-color: gray;
+    color: white;
+   
+}
+
+/* Estilo para tallas deshabilitadas (opcional) */
+.talla-recuadro.disabled {
+    cursor: not-allowed;
+    background-color: #f0f0f0;
+    color: #aaa;
+    border-color: #ddd;
+    text-decoration: line-through;
+}
+
+.seleccion-actual {
+    margin: 0;
+    color: #333;
+}

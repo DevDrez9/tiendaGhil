@@ -60,7 +60,7 @@ const CarritoDetalle = ({ carrito, onDeleteItem, onDeleteCarrito, onCheckout }) 
                 </span>
             </div>
             
-            <p><strong>Precio Total:</strong> ${carrito.precio}</p>
+            <p><strong>Precio Total:</strong> Bs.{carrito.precio}</p>
             <p><strong>Fecha:</strong> {new Date(carrito.createdAt).toLocaleDateString()}</p>
             
             <h4 className="carrito-subtitle">Ítems ({carrito.items.length})</h4>
@@ -92,7 +92,7 @@ const CarritoDetalle = ({ carrito, onDeleteItem, onDeleteCarrito, onCheckout }) 
                         {/* Contenido del item */}
                         <div className="item-details">
                             <span>{item.cantidad} x {item.producto.nombre}</span>
-                            <span className="item-price">(${item.producto.precio.toFixed(2)} c/u)</span>
+                            <span className="item-price">(Bs.{item.producto.precio.toFixed(2)} c/u)</span>
                         </div>
                         
                         {/* Botón de eliminación del ÍTEM */}
@@ -121,7 +121,7 @@ const CarritoDetalle = ({ carrito, onDeleteItem, onDeleteCarrito, onCheckout }) 
                             Hacer Pedido (Checkout)
                         </button>
                     ) : (
-                        <p style={{ color: '#dc3545', margin: 0, fontWeight: 'bold' }}>Carrito vacío</p>
+                        <p style={{ color: '#dc3545', margin: 0, fontWeight: 'bold' }}>No tienes productos en el carrito</p>
                     )}
 
                     <button 

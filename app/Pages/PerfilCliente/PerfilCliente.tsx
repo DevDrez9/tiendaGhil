@@ -103,11 +103,11 @@ const PerfilCliente = () => {
                     <span className="detail-value">{userData.email}</span>
                 </div>
                 
-                <div className="detail-group">
+               {/* <div className="detail-group">
                     <span className="detail-label">ID de Usuario:</span>
                     <span className="detail-value">{userData.id}</span>
                 </div>
-                
+                */}
                 {/* Añade más campos según la estructura de userData (teléfono, dirección, etc.) */}
                 {userData.telefono && (
                     <div className="detail-group">
