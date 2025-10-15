@@ -10,6 +10,7 @@ const Registro = ({ onRegisterSuccess, onNavigateToLogin }) => {
     password: '',
     nombre: '',
     apellido: '', // Es opcional, pero lo incluimos
+    telefono:"",
     rol:'CLIENTE'
   });
    const navigate = useNavigate();
@@ -88,6 +89,7 @@ const Registro = ({ onRegisterSuccess, onNavigateToLogin }) => {
       
       <InputText1 label='Nombre' value={form.nombre} onChange={(value)=>handleChange("nombre",value)}width={"100%"}  required />
       <InputText1 label='Apellido' value={form.apellido} onChange={(value)=>handleChange("apellido",value)} width={"100%"}  required />
+       <InputText1 label='Telefono' value={form.telefono} onChange={(value)=>handleChange("telefono",value)} width={"100%"}  required />
       
 
       <div style={{width:"100%", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:"10px"}}>

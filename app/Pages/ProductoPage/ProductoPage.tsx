@@ -247,7 +247,11 @@ const ProductoPage: React.FC = () => {
           </div>
         </div>
         <div className="contenidoProducto">
-          <h2>{producto.nombre}</h2>
+          <div style={{display:"flex", flexDirection:"column"}}>
+          <h2 style={{textAlign:"start"}}>{producto.nombre}</h2>
+          <h3>{producto.descripcion}</h3>
+          </div>
+          
           <div className="precioProducto">
             Bs. <b>{producto.precio}</b>
           </div>

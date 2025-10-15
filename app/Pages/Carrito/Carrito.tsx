@@ -15,6 +15,9 @@ const getStatusClass = (estado) => {
             return 'status-pendiente'; // En proceso, no editable
         case 'finalizado':
             return 'status-finalizado'; // Completado, no editable
+        case 'cancelado':
+            return 'status-cancelado'; // Completado, no editable
+            
         default:
             return 'status-otro';
     }
