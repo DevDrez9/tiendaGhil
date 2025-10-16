@@ -64,7 +64,7 @@ const BannerCarusel: React.FC<BannerCarouselProps> = ({
             aria-hidden={index !== currentIndex}
           >
             {banner.enlace ? (
-              <a href={banner.enlace} className="banner-link">
+              <a  className="banner-link">
                 <img 
                   src={"http://localhost:3000"+banner.url} 
                   alt={banner.titulo || ''}
