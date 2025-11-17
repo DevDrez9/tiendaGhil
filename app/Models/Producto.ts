@@ -23,6 +23,7 @@ export interface Producto {
   stock: number;
   stockMinimo: number;
   sku: string;
+  tallas:string;
   imagenUrl: string;
   categoriaId: number;
   subcategoriaId: number | null;

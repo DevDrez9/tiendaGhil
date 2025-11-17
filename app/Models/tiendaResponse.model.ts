@@ -23,6 +23,7 @@ export interface ConfigWeb {
   createdAt: string;
   updatedAt: string;
   banners: Banner[];
+  imagenQr: string;
 }
 
 // Estructura para Subcategoria

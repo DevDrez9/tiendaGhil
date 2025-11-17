@@ -83,7 +83,7 @@ if (usuarioId) {
           
           
         />
-        <Outlet context={{ banners, handleCard, }} />
+        <Outlet context={{ banners, handleCard, configWeb}} />
         <Footer categorias={categorias} configWeb={configWeb}></Footer>
       </div>
     </>
